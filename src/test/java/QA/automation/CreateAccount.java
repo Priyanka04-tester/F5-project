@@ -15,13 +15,17 @@ public class CreateAccount {
 	driver.get("https://f5global.com/");
 	driver.get("https://f5global.com/account/login");
 	driver.get("https://f5global.com/account/register");
-	driver.findElement(By.id("RegisterForm-FirstName")).sendKeys("priyanka");
-	driver.findElement(By.id("RegisterForm-LastName")).sendKeys("priyanka");
-	driver.findElement(By.id("RegisterForm-email")).sendKeys("priyanka@yopmail.com");
+	driver.findElement(By.id("RegisterForm-FirstName")).sendKeys("Rehana");
+	driver.findElement(By.id("RegisterForm-LastName")).sendKeys("Kapoor");
+	driver.findElement(By.id("RegisterForm-email")).sendKeys("kapoor@yopmail.com");
 	driver.findElement(By.id("RegisterForm-password")).sendKeys("Password@123");
 	driver.findElement(By.id("RegisterForm-confirmPassword")).sendKeys("Password@123");
-	JavascriptExecutor jse = (JavascriptExecutor)driver;
-	jse.executeScript("return window.getComputedStyle(document.querySelector('.checkbox-div'),'::after').getPropertyValue('content')");
-	
+	//JavascriptExecutor jse = (JavascriptExecutor)driver;
+	//jse.executeScript("return window.getComputedStyle(document.querySelector('.checkbox-div'),'::after').getPropertyValue('content')");
+	driver.findElement(By.xpath("//label[@for=\"agree\"]")).click();
+	driver.findElement(By.xpath("//label[@for=\"random\"]")).click();
+	driver.findElement(By.xpath("//button[@id='submitBtn']")).click();
+	System.out.println("Signup successfull");
+	//driver.quit();
 	}
 }
